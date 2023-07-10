@@ -4,7 +4,7 @@ import time
 from json.decoder import JSONDecodeError
 
 
-def __get(product, headers, parameters, limit, verbose, delay):
+def __get(product, headers, parameters, limit, verbose, delay, proxies):
     """Calculate required pages for multiple requests, send the GET request with the search criteria, return list of CVEs or CPEs objects."""
 
     # Get the default 2000 items to see the totalResults and determine pages required.
@@ -20,7 +20,7 @@ def __get(product, headers, parameters, limit, verbose, delay):
     if verbose:
         print('Filter:\n' + link + stringParams)
 
-    raw = requests.get(link, params=stringParams, headers=headers, timeout=30)
+    raw = requests.get(link, params=stringParams, headers=headers, timeout=30, proxies=proxies)
     raw.encoding = 'utf-8'
     raw.raise_for_status()
 
