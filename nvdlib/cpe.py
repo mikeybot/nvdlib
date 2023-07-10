@@ -73,8 +73,7 @@ def searchCPE(
         matchCriteriaId,
         limit,
         key,
-        delay,
-        proxies)
+        delay)
 
     # Send the GET request for the JSON and convert to dictionary
     raw = __get('cpe', headers, parameters, limit, verbose, delay, proxies)
@@ -151,8 +150,7 @@ def searchCPE_V2(
         matchCriteriaId,
         limit,
         key,
-        delay,
-        proxies)
+        delay)
 
     # Send the GET request. Get a generator object that returns batched
     # responses converted to dictionaries
@@ -173,8 +171,7 @@ def __buildCPECall(
     matchCriteriaId,
     limit,
     key,
-    delay,
-    proxies):
+    delay):
 
     parameters = {}
 

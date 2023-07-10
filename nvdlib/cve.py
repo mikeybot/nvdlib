@@ -154,8 +154,7 @@ def searchCVE(
         virtualMatchString,
         limit,
         delay,
-        key,
-        proxies)
+        key)
 
     # raw is the raw dictionary response.
     raw = __get('cve', headers, parameters, limit, verbose, delay, proxies)
@@ -314,8 +313,7 @@ def searchCVE_V2(
         virtualMatchString,
         limit,
         delay,
-        key,
-        proxies)
+        key)
 
     # Send the GET request. Get a generator object that returns batched
     # responses converted to dictionaries
