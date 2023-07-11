@@ -24,6 +24,11 @@ Example with an API key (insert your own API key).
 
    >>> r = nvdlib.searchCVE(cveId='CVE-2017-0144', key='xxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxxx', delay=6)
 
+Example with a proxy.
+
+   >>> proxy = {'http':'http://username:password@proxy.example.com:8080,'https':'https://username:password@proxy.example.com:8443}
+   >>> r = nvdlib.searchCVE(cveId='CVE-2017-0144', proxies = proxy)
+
 .. note::
    Due to rate limiting restrictions by NVD, a request will take 6 seconds with no API key. Requests with an API key have the ability to define a `delay` argument. The delay argument must be a integer/float greater than or equal to 0.6 (seconds).
    
